@@ -1,11 +1,14 @@
 packages:
-  - "packages/*"
+  - apps/*
+  - packages/*
+
 allowBuilds:
   nx: true
 
 catalogs:
   nestjs:
     "@nestjs/common": "12.1.1"
+    "@nestjs/core": "^12.1.2"
 
   tooling:
     "typescript": "^7.0.2"
