@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nx run-many -t dev -p tag:type:app",
+    "build": "nx run-many -t build",
+    "typecheck": "nx run-many -t typecheck",
+    "test": "nx run-many -t test",
+    "lint": "oxlint --no-error-on-unmatched-pattern apps/ packages/ libs/ && pnpm --filter @intentra/web run lint:fsd",
+    "prettier": "prettier --write \"{apps,packages,libs}/**/*.{ts,tsx,json}\"",
+    "prettier:check": "prettier --check \"{apps,packages,libs}/**/*.{ts,tsx,json}\"",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +29,11 @@
     "prettier": "^3.9.9",
     "typescript": "catalog:tooling",
     "vitest": "catalog:tooling"
+  },
+  "lint-staged": {
+    "**/!(*.generated).{ts,tsx}": [
+      "oxlint --fix --no-error-on-unmatched-pattern",
+      "prettier --write"
+    ]
   }
 }
