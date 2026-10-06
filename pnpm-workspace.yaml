@@ -1,0 +1,12 @@
+packages:
+  - "packages/*"
+allowBuilds:
+  nx: true
+
+catalogs:
+  nestjs:
+    "@nestjs/common": "12.1.1"
+
+  tooling:
+    "typescript": "^7.0.2"
+    "vitest": "^5.0.3"
