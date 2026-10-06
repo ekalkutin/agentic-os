@@ -1,0 +1,5 @@
+// use prisma-8
+
+model Agent {
+  id Uuid @id @default(uuid())
+}

@@ -15,8 +15,12 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@agentic-os/agents": "workspace:*",
+    "@nestjs/common": "catalog:nestjs",
+    "@nestjs/config": "catalog:nestjs",
     "@nestjs/core": "catalog:nestjs",
-    "@agentic-os/agents": "workspace:*"
+    "@nestjs/platform-express": "catalog:nestjs",
+    "zod": "catalog:"
   },
   "nx": {
     "tags": [
