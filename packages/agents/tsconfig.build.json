@@ -10,5 +10,5 @@
     "tsBuildInfoFile": "./build/.tsbuildinfo"
   },
   "include": ["src/**/*", "src/**/*.json"],
-  "exclude": ["build", "node_modules", "src/**/*.spec.ts"]
+  "exclude": ["build", "node_modules", "src/**/*.spec.ts", "src/infrastructure/persistence/models/migrations"]
 }

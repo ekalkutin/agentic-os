@@ -27,10 +27,11 @@
   "dependencies": {
     "@nestjs/common": "catalog:nestjs",
     "@nestjs/config": "catalog:nestjs",
-    "@prisma/orm-postgres": "8.0.0-rc.14",
-    "dotenv": "^18.0.5"
+    "@prisma/orm-postgres": "8.0.0-rc.16",
+    "dotenv": "^18.0.6"
   },
   "devDependencies": {
-    "@prisma/cli-engine": "^0.6.2"
+    "@prisma/cli-engine": "^0.6.3",
+    "prisma": "8.0.0-rc.21"
   }
 }
