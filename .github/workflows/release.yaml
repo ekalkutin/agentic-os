@@ -35,9 +35,7 @@ jobs:
           file: ${{ matrix.dockerfile }}
           target: ${{ matrix.target }}
           push: true
-          tags: |
-            ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
-            ${{ env.DOCKER_IMAGE }}:latest
+          tags: ${{ env.DOCKER_IMAGE }}:latest
           cache-from: type=gha,scope=${{ matrix.image }}
           cache-to: type=gha,scope=${{ matrix.image }},mode=max
 
@@ -62,13 +60,12 @@ jobs:
         env:
           DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-          IMAGE_TAG: ${{ github.sha }}
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           fingerprint: ${{ secrets.SSH_FINGERPRINT }}
-          envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN,IMAGE_TAG
+          envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN
           script: |
             set -e
             cd /opt/agentic-os

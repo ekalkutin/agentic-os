@@ -29,14 +29,14 @@ services:
 
   migrate:
     <<: *app-env
-    image: ${DOCKERHUB_USERNAME:?set DOCKERHUB_USERNAME in .env}/agentic-os-migrate:${IMAGE_TAG:-latest}
+    image: ${DOCKERHUB_USERNAME:?set DOCKERHUB_USERNAME in .env}/agentic-os-migrate:latest
     depends_on:
       postgres:
         condition: service_healthy
 
   server:
     <<: *app-env
-    image: ${DOCKERHUB_USERNAME:?set DOCKERHUB_USERNAME in .env}/agentic-os-server:${IMAGE_TAG:-latest}
+    image: ${DOCKERHUB_USERNAME:?set DOCKERHUB_USERNAME in .env}/agentic-os-server:latest
     ports:
       - "127.0.0.1:3000:3000"
     depends_on:
