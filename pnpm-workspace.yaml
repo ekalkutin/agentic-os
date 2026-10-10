@@ -5,6 +5,7 @@ packages:
 allowBuilds:
   esbuild: true
   nx: true
+  workerd: false
 
 catalog:
   zod: "^4.6.5"

@@ -7,9 +7,10 @@
     "build": "tsc -p tsconfig.build.json",
     "watch": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
-    "contract:emit": "prisma contract emit"
+    "contract:emit": "prisma contract emit",
+    "migrate": "prisma db migrate"
   },
   "exports": {
     ".": {
@@ -27,11 +28,11 @@
   "dependencies": {
     "@nestjs/common": "catalog:nestjs",
     "@nestjs/config": "catalog:nestjs",
-    "@prisma/orm-postgres": "8.0.0-rc.16",
-    "dotenv": "^18.0.6"
+    "@prisma/orm-postgres": "8.0.0-rc.17",
+    "dotenv": "^18.0.7"
   },
   "devDependencies": {
-    "@prisma/cli-engine": "^0.6.3",
-    "prisma": "8.0.0-rc.21"
+    "@prisma/cli-engine": "^0.7.0",
+    "prisma": "8.0.0-rc.22"
   }
 }
